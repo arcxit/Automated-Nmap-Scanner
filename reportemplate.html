@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Nmap Report</title></head>
+<body>
+<h2>Nmap Report</h2>
+<p>Targets: {{ targets|join(", ") }}</p>
+<table border="1" cellpadding="6">
+<tr><th>Host</th><th>Port</th><th>Service</th><th>State</th></tr>
+{% for r in results %}
+<tr><td>{{ r.host }}</td><td>{{ r.port }}</td><td>{{ r.service }}</td><td>{{ r.state }}</td></tr>
+{% endfor %}
+</table>
+</body></html>
